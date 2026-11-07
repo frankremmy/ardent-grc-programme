@@ -1,6 +1,6 @@
 # 01 — Compliance programme: scope, SoA and gap plan
 
-**Artefact:** [`ardent-iso27001-soa-matrix.xlsx`](ardent-iso27001-soa-matrix.xlsx) · Google Sheet: *link to be added*
+**Artefact:** [Ardent ISO 27001 SoA matrix — Google Sheet (view only)](https://docs.google.com/spreadsheets/d/1BPU_WZIlt40nkkxB_cDKS2JhUJ_UNFKknuPUtyj3yc4/edit?usp=sharing)
 
 Five sheets: Read me · Scope · SoA matrix (93 controls) · Summary (live formulas) · Action plan (63 actions)
 
