@@ -9,7 +9,7 @@ Company profile: [`company-profile.md`](company-profile.md)
 | # | Project | What it shows | Status |
 |---|---|---|---|
 | 01 | [Compliance programme](01-compliance-programme/) · [Sheet](https://docs.google.com/spreadsheets/d/1BPU_WZIlt40nkkxB_cDKS2JhUJ_UNFKknuPUtyj3yc4/edit?usp=sharing) | ISMS scope, Statement of Applicability covering all 93 Annex A controls, SOC 2 and NIST CSF 2.0 crosswalk, gap action plan | ☑ |
-| 02 | Risk register | 15 risks scored and heat-mapped, residual risk, FAIR estimate for the top risk | ☐ |
+| 02 | [Risk register](02-risk-register/) · [Sheet](https://docs.google.com/spreadsheets/d/11GxpylEPevgmE8XV62QuoAibNbC6H5lxfn0bI8CRsjo/edit?usp=sharing) | 15 risks with criteria, heat map (inherent and residual), linked SoA controls, FAIR on the top risk | ☑ |
 | 03 | Vendor assessment | My own 25-question questionnaire, a scorecard and a supplier report | ☐ |
 | 04 | Incident response and tabletop | IR plan, a tabletop on a leaked AWS key, incident report, GDPR Art. 33 decision | ☐ |
 | 05 | SOC 2 controls on AWS | Trust Services Criteria mapped to real AWS settings, with CLI evidence | ☐ |
