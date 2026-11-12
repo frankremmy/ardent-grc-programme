@@ -12,7 +12,7 @@ Company profile: [`company-profile.md`](company-profile.md)
 | 02 | [Risk register](02-risk-register/) · [Sheet](https://docs.google.com/spreadsheets/d/11GxpylEPevgmE8XV62QuoAibNbC6H5lxfn0bI8CRsjo/edit?usp=sharing) | 15 risks with criteria, heat map (inherent and residual), linked SoA controls, FAIR on the top risk | ☑ |
 | 03 | [Vendor assessment](03-vendor-assessment/) · [Sheet](https://docs.google.com/spreadsheets/d/1cTJYx1Pe84g7wE_XPOu2SiulBZT_EZQXCa9RaZAiPnI/edit?usp=sharing) | Supplier tiering, a 26-question weighted questionnaire, Zendesk scored from public evidence, approval conditions | ☑ |
 | 04 | [Incident response and tabletop](04-incident-response/) · [Plan](https://docs.google.com/document/d/1LLZzONcNENcnrn1ZdpWsJJ8o0zdj9VRLMbrmsmXoKzc/edit?usp=sharing) · [Exercise](https://docs.google.com/document/d/17ro6JKg-mW8UctqNQYahEoc5ifCOoTP_XN6T1r5euJU/edit?usp=sharing) | IR plan v1.1, a 7-inject tabletop on a leaked AWS key, incident report, controller/processor GDPR decision, lessons fed back into the plan | ☑ |
-| 05 | SOC 2 controls on AWS | Trust Services Criteria mapped to real AWS settings, with CLI evidence | ☐ |
+| 05 | [SOC 2 controls on AWS](05-soc2-aws/) | 12 controls built in a real AWS account by script, mapped to SOC 2 TSC and ISO 27001, evidenced from AWS APIs: 11 PASS, 1 documented exception | ☑ |
 | 06 | Compliance dashboard | Coverage, risk, vendors, findings and remediation in one sheet | ☐ |
 | 07 | Internal audit | An ISO 19011-style audit of projects 01–05: plan, evidence, findings, report, follow-up | ☐ |
 

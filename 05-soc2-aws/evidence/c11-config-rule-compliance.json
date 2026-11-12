@@ -1,0 +1,52 @@
+{
+    "ComplianceByConfigRules": [
+        {
+            "ConfigRuleName": "cloud-trail-enabled",
+            "Compliance": {
+                "ComplianceType": "COMPLIANT"
+            }
+        },
+        {
+            "ConfigRuleName": "iam-password-policy",
+            "Compliance": {
+                "ComplianceType": "COMPLIANT"
+            }
+        },
+        {
+            "ConfigRuleName": "iam-root-access-key-check",
+            "Compliance": {
+                "ComplianceType": "COMPLIANT"
+            }
+        },
+        {
+            "ConfigRuleName": "root-account-mfa-enabled",
+            "Compliance": {
+                "ComplianceType": "COMPLIANT"
+            }
+        },
+        {
+            "ConfigRuleName": "s3-bucket-public-read-prohibited",
+            "Compliance": {
+                "ComplianceType": "COMPLIANT"
+            }
+        },
+        {
+            "ConfigRuleName": "s3-bucket-server-side-encryption-enabled",
+            "Compliance": {
+                "ComplianceType": "COMPLIANT"
+            }
+        },
+        {
+            "ConfigRuleName": "s3-bucket-ssl-requests-only",
+            "Compliance": {
+                "ComplianceType": "COMPLIANT"
+            }
+        },
+        {
+            "ConfigRuleName": "s3-bucket-versioning-enabled",
+            "Compliance": {
+                "ComplianceType": "COMPLIANT"
+            }
+        }
+    ]
+}

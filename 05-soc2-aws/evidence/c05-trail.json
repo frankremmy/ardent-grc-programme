@@ -1,0 +1,17 @@
+{
+    "trailList": [
+        {
+            "Name": "ardent-account-trail",
+            "S3BucketName": "ardent-soc2-lab-logs-XXXXXXXXXXXX",
+            "IncludeGlobalServiceEvents": true,
+            "IsMultiRegionTrail": true,
+            "HomeRegion": "eu-west-1",
+            "TrailARN": "arn:aws:cloudtrail:eu-west-1:XXXXXXXXXXXX:trail/ardent-account-trail",
+            "LogFileValidationEnabled": true,
+            "HasCustomEventSelectors": true,
+            "HasInsightSelectors": false,
+            "IsOrganizationTrail": false,
+            "RecursiveLogging": true
+        }
+    ]
+}

@@ -2,7 +2,7 @@
 
 > Simulated engagement for Ardent Ledger (fictional). **The AWS account and the evidence are real.** I built these controls in my own AWS account using the scripts here. Every result in the evidence summary comes from the AWS APIs, with the account ID masked.
 
-**Status:** scripts ready · build and evidence pending
+**Status:** built and evidenced 2026-11-12 · **11 of 12 controls PASS · 1 not available (GuardDuty) · 8 of 8 Config rules COMPLIANT**
 
 ## What this shows
 
@@ -50,4 +50,25 @@ cd ardent-grc-programme/05-soc2-aws/scripts
 
 ## Evidence
 
-*Pending first run.* `evidence/SUMMARY.md` will list a PASS/FAIL result for each control, alongside the raw JSON it was based on.
+Collected 2026-11-12 07:19 UTC from eu-west-1 by `02-collect-evidence.sh`. Raw JSON for every check is in [`evidence/`](evidence/), with the account ID masked. The summary is in [`evidence/SUMMARY.md`](evidence/SUMMARY.md).
+
+| Result | Controls |
+|---|---|
+| **PASS (11)** | C1 root MFA · C2 no root keys · C3 password policy · C4 console-only users with MFA · C5 CloudTrail (multi-region, validation, S3 data events) · C6 account-level S3 Block Public Access · C7 EBS default encryption · C8 KMS rotation · C9 customer-data bucket (KMS, versioning, TLS-only) · C11 AWS Config · C12 Access Analyzer |
+| **Not available (1)** | C10 GuardDuty: the account returned `SubscriptionRequiredException` on the AWS free plan |
+
+AWS Config (C11) independently checks eight of these settings, and all eight rules came back COMPLIANT. Each control is therefore evidenced twice: once by my script and once by AWS's own continuous monitoring. Using two independent sources of evidence is how an auditor gains confidence in a control.
+
+## Findings and exceptions
+
+| # | Finding | Effect | Treatment |
+|---|---|---|---|
+| E1 | **GuardDuty unavailable.** Threat detection (CC7.2) has no automated control in the lab account | Same gap as SoA 8.16 and TTX-01 lesson L1: a misused key would not raise an alert | In a production (paid) account: enable GuardDuty and send findings to on-call. Here: documented as an exception; CloudTrail data events (C5) still give investigators the record they lacked in TTX-01 |
+| E2 | **Deviation: no IAM Identity Center.** On the free plan, Identity Center needs AWS Organizations, which would end the free plan | People sign in as console-only IAM users with MFA instead of SSO | Equivalent for this lab: no access keys exist, and CloudShell uses short-lived session credentials. Production design: Identity Center via Organizations |
+| E3 | **Point-in-time evidence.** This shows the controls were in place on one day, which is what a SOC 2 Type I tests | A Type II needs proof the controls ran over 3–12 months | Re-run `02-collect-evidence.sh` on a schedule and keep each run; Config's history covers the period between runs |
+
+## What I learned building it
+
+- **Run-environment details break automation.** CloudShell sets its own `AWS_REGION`, which overrode my script's region, and the first bucket creation failed. The fix was one line. The lesson is to test where the script will actually run, and to fail clearly when something is wrong.
+- **Plan restrictions are findings, not obstacles.** GuardDuty being unavailable is the same kind of gap a real company has when a service isn't licensed. The scripts record it as an exception with evidence. They don't stop, and they don't hide it.
+- **SOC 2 maps to settings, but auditors test the evidence.** Every control here produces a file an auditor could re-perform from. That matters more than the setting itself.

@@ -1,0 +1,12 @@
+{
+    "analyzer": {
+        "arn": "arn:aws:access-analyzer:eu-west-1:XXXXXXXXXXXX:analyzer/ardent-account-analyzer",
+        "name": "ardent-account-analyzer",
+        "type": "ACCOUNT",
+        "createdAt": "2026-11-12T07:01:58+00:00",
+        "lastResourceAnalyzed": "arn:aws:s3:::ardent-soc2-lab-logs-XXXXXXXXXXXX",
+        "lastResourceAnalyzedAt": "2026-11-12T07:04:05.417000+00:00",
+        "tags": {},
+        "status": "ACTIVE"
+    }
+}

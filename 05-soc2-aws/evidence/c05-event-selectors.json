@@ -1,0 +1,39 @@
+{
+    "TrailARN": "arn:aws:cloudtrail:eu-west-1:XXXXXXXXXXXX:trail/ardent-account-trail",
+    "AdvancedEventSelectors": [
+        {
+            "Name": "Management events",
+            "FieldSelectors": [
+                {
+                    "Field": "eventCategory",
+                    "Equals": [
+                        "Management"
+                    ]
+                }
+            ]
+        },
+        {
+            "Name": "Customer-data bucket object access",
+            "FieldSelectors": [
+                {
+                    "Field": "eventCategory",
+                    "Equals": [
+                        "Data"
+                    ]
+                },
+                {
+                    "Field": "resources.ARN",
+                    "StartsWith": [
+                        "arn:aws:s3:::ardent-soc2-lab-data-XXXXXXXXXXXX/"
+                    ]
+                },
+                {
+                    "Field": "resources.type",
+                    "Equals": [
+                        "AWS::S3::Object"
+                    ]
+                }
+            ]
+        }
+    ]
+}
