@@ -16,8 +16,8 @@
 | Role | Responsibility in the ISMS |
 |---|---|
 | CEO | Top management. Accountable for the ISMS and approves the policy |
-| CTO | Owner of technology risk; the ISM reports to the CTO |
-| Information Security Manager (me) | Runs the ISMS, risk process, audits and the assessor relationship |
+| CTO | Owner of technology risk; the ISA reports to the CTO |
+| Information Security Analyst (ISA, me) | Runs the ISMS, risk process, audits and the assessor relationship |
 | Head of Engineering | Secure development, change management |
 | DevOps Lead | AWS, identity, logging, backups |
 | Head of People | Screening, onboarding/offboarding, training records |

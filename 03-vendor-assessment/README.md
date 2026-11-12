@@ -42,7 +42,7 @@ Answers: 13 Yes · 9 Partial · 0 No · 4 Unknown. Evidence quality: 19 Document
 | 4 | Change the DPA: breach notice within 48h, deletion within 30 days of exit with confirmation, and a sub-processor list with change notice | Renewal |
 | 5 | Confirm EU data location, and switch off features that process data outside the region | Jan 2027 |
 | 6 | Turn on card redaction, keep no IBANs or full card numbers in tickets, and delete attachments after 90 days | Dec 2026 |
-| 7 | Allow no outsourced or BPO agents without ISM approval and a separate assessment | Immediate |
+| 7 | Allow no outsourced or BPO agents without ISA approval and a separate assessment | Immediate |
 | 8 | Decide on the paid add-on (customer-managed keys, data-access logs) | Mar 2027 |
 | 9 | Re-assess annually and track certificate and report expiry dates | Nov 2027 |
 

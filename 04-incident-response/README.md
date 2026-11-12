@@ -47,6 +47,6 @@ The document control table records each change, and links it to the lesson that 
 ## Why it's built this way
 
 - **One scenario, tied to the top risk.** A tabletop pays for itself when it tests the incident the organisation most needs to handle well. Here that's the one the FAIR estimate put at about €231k a year.
-- **The ISM facilitates, and the deputy runs the response.** If the plan only works when its author is in the room, it hasn't been tested.
+- **The ISA facilitates, and the deputy runs the response.** If the plan only works when its author is in the room, it hasn't been tested.
 - **Controller vs processor.** For a B2B SaaS company this is the most common GDPR mistake. Most of the personal data Ardent holds belongs to its customers' customers, so Ardent's duty is to tell its customers quickly and give them what they need to make their own Art. 33 decision.
 - **Lessons go back into the registers.** Each action links to an SoA control and a risk ID. The internal audit ([project 07](../07-internal-audit/)) then checks whether they actually happened.
