@@ -68,10 +68,14 @@ b=$(aws s3api get-bucket-versioning --bucket "$DATA_BUCKET" --query Status --out
 c=$(aws s3api get-bucket-policy --bucket "$DATA_BUCKET" --query Policy --output text | grep -c SecureTransport || true)
 row C9 "Customer-data bucket: KMS encryption, versioning, TLS-only policy" "C1.1, A1.2, CC6.7" "$(pf "$a $b $c" "aws:kms Enabled 1")" c09-data-bucket.json
 
-DET="$(aws guardduty list-detectors --query 'DetectorIds[0]' --output text)"
-aws guardduty get-detector --detector-id "$DET" --output json | save c10-guardduty.json
-v=$(aws guardduty get-detector --detector-id "$DET" --query Status --output text)
-row C10 "GuardDuty enabled, 15-minute finding publication" "CC7.2, CC7.3" "$(pf "$v" ENABLED)" c10-guardduty.json
+if DET="$(aws guardduty list-detectors --query 'DetectorIds[0]' --output text 2>/dev/null)" && [ "$DET" != "None" ] && [ -n "$DET" ]; then
+  aws guardduty get-detector --detector-id "$DET" --output json | save c10-guardduty.json
+  v=$(aws guardduty get-detector --detector-id "$DET" --query Status --output text)
+  row C10 "GuardDuty enabled, 15-minute finding publication" "CC7.2, CC7.3" "$(pf "$v" ENABLED)" c10-guardduty.json
+else
+  aws guardduty list-detectors 2>&1 | save c10-guardduty-unavailable.txt || true
+  row C10 "GuardDuty enabled, 15-minute finding publication" "CC7.2, CC7.3" "NOT AVAILABLE (account subscription; see file)" c10-guardduty-unavailable.txt
+fi
 
 aws configservice describe-configuration-recorder-status --output json | save c11-config-recorder.json
 aws configservice describe-compliance-by-config-rule --output json | save c11-config-rule-compliance.json

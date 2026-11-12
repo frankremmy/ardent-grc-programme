@@ -77,8 +77,13 @@ aws cloudtrail put-event-selectors --trail-name "$TRAIL" --advanced-event-select
 aws cloudtrail start-logging --name "$TRAIL"
 
 say "C10 GuardDuty threat detection (CC7.2, CC7.3)"
-if [ -z "$(aws guardduty list-detectors --query 'DetectorIds[0]' --output text | grep -v None || true)" ]; then
-  aws guardduty create-detector --enable --finding-publishing-frequency FIFTEEN_MINUTES >/dev/null
+if gd="$(aws guardduty list-detectors --query 'DetectorIds[0]' --output text 2>&1)"; then
+  if [ "$gd" = "None" ] || [ -z "$gd" ]; then
+    aws guardduty create-detector --enable --finding-publishing-frequency FIFTEEN_MINUTES >/dev/null
+  fi
+else
+  echo "  SKIPPED: GuardDuty is not available to this account (${gd##*: })."
+  echo "  Recorded as a gap by 02-collect-evidence.sh. Continuing."
 fi
 
 say "C12 IAM Access Analyzer (CC6.3, CC6.6)"
