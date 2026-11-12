@@ -13,9 +13,24 @@ Company profile: [`company-profile.md`](company-profile.md)
 | 03 | [Vendor assessment](03-vendor-assessment/) · [Sheet](https://docs.google.com/spreadsheets/d/1cTJYx1Pe84g7wE_XPOu2SiulBZT_EZQXCa9RaZAiPnI/edit?usp=sharing) | Supplier tiering, a 26-question weighted questionnaire, Zendesk scored from public evidence, approval conditions | ☑ |
 | 04 | [Incident response and tabletop](04-incident-response/) · [Plan](https://docs.google.com/document/d/1LLZzONcNENcnrn1ZdpWsJJ8o0zdj9VRLMbrmsmXoKzc/edit?usp=sharing) · [Exercise](https://docs.google.com/document/d/17ro6JKg-mW8UctqNQYahEoc5ifCOoTP_XN6T1r5euJU/edit?usp=sharing) | IR plan v1.1, a 7-inject tabletop on a leaked AWS key, incident report, controller/processor GDPR decision, lessons fed back into the plan | ☑ |
 | 05 | [SOC 2 controls on AWS](05-soc2-aws/) | 12 controls built in a real AWS account by script, mapped to SOC 2 TSC and ISO 27001, evidenced from AWS APIs: 11 PASS, 1 documented exception | ☑ |
-| 06 | Compliance dashboard | Coverage, risk, vendors, findings and remediation in one sheet | ☐ |
-| 07 | Internal audit | An ISO 19011-style audit of projects 01–05: plan, evidence, findings, report, follow-up | ☐ |
+| 06 | [Compliance dashboard](06-compliance-dashboard/) · [Sheet](https://docs.google.com/spreadsheets/d/1A9FSIm66tnDNsn0SyD0PrBKcHFIB-mJd2zOjZJPh3ws/edit?usp=sharing) | One sheet for management: score vs target, burndown plan vs actual, risks, suppliers, audit findings, lessons | ☑ |
+| 07 | [Internal audit](07-internal-audit/) · [Report](https://docs.google.com/document/d/18-iXW48czF-Z6BYdcwlGGwNJjisB13ut430eCkeq8_A/edit?usp=sharing) | Audit of projects 01–05 by cross-checking them: plan, 12 tests, 1 major + 4 minor NCs found in my own work, closing meeting, follow-up | ☑ |
 
 The projects build on each other. The SoA links to the risk register, the audit samples the other projects, and the dashboard reads from all of them.
+
+## How the programme ran
+
+| Date | Step | Outcome |
+|---|---|---|
+| 2026-11-07 | Baseline: scope, SoA, risk register | 54.4% implemented; 6 High risks; 63 open actions |
+| 2026-11-08 | First Tier 1 supplier review (Zendesk) | 67%: approve with 9 conditions |
+| 2026-11-10 | IR plan v1.0 approved | — |
+| 2026-11-12 | SOC 2 controls built and evidenced on AWS | 11 / 12 PASS; GuardDuty exception |
+| 2026-11-20 | Tabletop TTX-01 (leaked AWS key) | 8 lessons; detection took 54h; scope couldn't be proven |
+| 2026-11-24 | IR plan v1.1 | Fixes from TTX-01, each traced to its lesson |
+| 2026-11-30 to 12-02 | Internal audit IA-01 | 1 major, 4 minor NCs; not yet ready for Stage 1 |
+| 2027-01-15 | Audit follow-up and dashboard | 60.0% implemented; 4 of 5 NCs closed; 5 actions behind plan |
+
+Every stage fed the next. The risk register set the tabletop scenario, the tabletop changed the plan and the AWS build, and the audit found where the documents hadn't kept up.
 
 Related: [Kestrel Pay DevSecOps case](https://github.com/frankremmy/grc-mastery/tree/main/case-studies/kestrel-pay-devsecops) · [GRC Mastery notes](https://github.com/frankremmy/grc-mastery)

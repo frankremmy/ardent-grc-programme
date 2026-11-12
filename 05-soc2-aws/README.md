@@ -72,3 +72,7 @@ AWS Config (C11) independently checks eight of these settings, and all eight rul
 - **Run-environment details break automation.** CloudShell sets its own `AWS_REGION`, which overrode my script's region, and the first bucket creation failed. The fix was one line. The lesson is to test where the script will actually run, and to fail clearly when something is wrong.
 - **Plan restrictions are findings, not obstacles.** GuardDuty being unavailable is the same kind of gap a real company has when a service isn't licensed. The scripts record it as an exception with evidence. They don't stop, and they don't hide it.
 - **SOC 2 maps to settings, but auditors test the evidence.** Every control here produces a file an auditor could re-perform from. That matters more than the setting itself.
+
+## Teardown
+
+The lab was torn down on 2026-11-12 after the internal audit sampled it. Both buckets, the trail, the Config rules and recorder, and Access Analyzer were deleted, and the KMS key was scheduled for deletion. Root MFA, the password policy, account-level S3 Block Public Access and EBS default encryption were left on as free hygiene settings. The teardown reported the GuardDuty subscription error again, which matches exception E1.
